@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Admindek | Admin Template</title>
+    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 10]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Admindek Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords" content="flat ui, admin Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="colorlib" />
+    <!-- Favicon icon -->
+    <link rel="icon" href="/files/assets/images/favicon.ico" type="image/x-icon">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
+    <!-- Required Fremwork -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../files/bower_components/bootstrap/css/bootstrap.min.css" type="text/css" >
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+	
+    <!-- waves.css -->
+    <link rel="stylesheet" href="../files/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
+    <!-- feather icon -->
+    <link rel="stylesheet" type="text/css" href="/files/assets/icon/feather/css/feather.css">
+    <!-- font-awesome-n -->
+    <link rel="stylesheet" type="text/css" href="/files/assets/css/font-awesome-n.min.css">
+    <!-- Chartlist chart css -->
+    <link rel="stylesheet" href="/files/bower_components/chartist/css/chartist.css" type="text/css" media="all">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Style.css -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" type="text/css" href="/files/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/files/assets/css/widget.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+	
+</head>
+
+<body>
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-bar"></div>
+    </div>
+    <!-- [ Pre-loader ] end -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+            <!-- [ Header ] start -->
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                        <a href="/index">
+                            <h3>PFD</h3>
+                        </a>
+                        <a class="mobile-menu" id="mobile-collapse" href="index.html#!">
+                            <i class="feather icon-menu icon-toggle-right"></i>
+                        </a>
+                        <a class="mobile-options waves-effect waves-light">
+                            <i class="feather icon-more-horizontal"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+                            <li class="header-search">
+                                <div class="main-search morphsearch-search">
+                                    <div class="input-group">
+                                        <span class="input-group-prepend search-close">
+										<i class="feather icon-x input-group-text"></i>
+									</span>
+                                        <input type="text" class="form-control" placeholder="Enter Keyword">
+                                        <span class="input-group-append search-btn">
+										<i class="feather icon-search input-group-text"></i>
+									</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="/index#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
+                                <i class="full-screen feather icon-maximize"></i>
+                            </a>
+                            </li>
+                        </ul>
+                        <ul class="nav-right">
+                            <li class="header-notification">
+                                <div class="dropdown-primary dropdown">
+                                    <div class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="feather icon-bell"></i>
+                                        
+                                    </div>
+                                    <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                        <li>
+                                            <h6>Notifications</h6>
+                                            
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="header-notification">
+                                <div class="dropdown-primary dropdown">
+                                    <div class="displayChatbox dropdown-toggle" data-toggle="dropdown">
+                                        <i class="feather icon-message-square"></i>
+                                        
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="user-profile header-notification">
+
+                                <div class="dropdown-primary dropdown">
+                                    <div class="dropdown-toggle" data-toggle="dropdown">
+                                        
+                                        <span>Admin</span>
+                                        <i class="feather icon-chevron-down"></i>
+                                    </div>
+                                    <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                        <li>
+                                            <a href="#">
+                                            <i class="feather icon-settings"></i> Settings
+
+                                        </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                            <i class="feather icon-user"></i> Profile
+
+                                        </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                            <i class="feather icon-mail"></i> My Messages
+
+                                        </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                            <i class="feather icon-lock"></i> Lock Screen
+
+                                        </a>
+                                        </li>
+                                        <li>
+                                            <a href="/">
+                                            <i class="feather icon-log-out"></i> Logout
+
+                                        </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- [ chat user list ] start -->
+            <div id="sidebar" class="users p-chat-user showChat">
+                <div class="had-container">
+                    <div class="p-fixed users-main">
+                        <div class="user-box">
+                            <div class="chat-search-box">
+                                <a class="back_friendlist">
+                                    <i class="feather icon-x"></i>
+                                </a>
+                                <div class="right-icon-control">
+                                    <div class="input-group input-group-button">
+                                        <input type="text" id="search-friends" name="footer-email" class="form-control" placeholder="Search Friend">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary waves-effect waves-light" type="button"><i class="feather icon-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-friend-list">
+                                <div class="media userlist-box waves-effect waves-light" data-id="1" data-status="online" data-username="Josephin Doe">
+                                    <a class="media-left" href="/index">
+                                                <img class="media-object img-radius img-radius" src="/files/assets/images/admin.png" alt="Generic placeholder image ">
+                                                <div class="live-status bg-success"></div>
+                                            </a>
+                                    <div class="media-body">
+                                        <div class="chat-header">Operator</div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ chat user list ] end -->
+
+            <!-- [ chat message ] start -->
+            
+
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <!-- [ navigation menu ] start -->
+                    <nav class="pcoded-navbar">
+                        <div class="nav-list">
+                            <div class="pcoded-inner-navbar main-menu">
+                                <div class="pcoded-navigation-label">Navigation</div>
+					<ul class="pcoded-item pcoded-left-item">
+		                            <li class="pcoded-hasmenu pcoded-trigger">
+		                                <a href="javascript:void(0)" class="waves-effect waves-dark">
+		    								<span class="pcoded-micon"><i class="feather icon-home"></i></span>
+		                                    <span class="pcoded-mtext">Report</span>
+		                                </a>
+		                                <ul class="pcoded-submenu">
+		                                    <li class="active">
+		                                        <a href="/index" class="waves-effect waves-dark">
+		                                            <span class="pcoded-mtext">SIPEVENT REPORT</span>
+		                                        </a>
+		                                    </li>
+						</ul>
+					</ul>
+                                      
+                            </div>
+                        </div>
+                    </nav>
+                    <!-- [ navigation menu ] end -->
+                    <div class="pcoded-content">
+                        <!-- [ breadcrumb ] start -->
+                        <div class="page-header card">
+                            <div class="row align-items-end">
+                                <div class="col-lg-8">
+                                    <div class="page-header-title">
+                                        <i class="feather icon-home bg-c-blue"></i>
+                                        <div class="d-inline">
+                                            <h5>SIPEVENT REPORT</h5>
+                                            <span>You can show reports, statistics and etc.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- [ breadcrumb ] end -->
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-body">
+                                        <!-- [ page content ] start -->
+					<div class="row">
+						  <div class="col-sm-12">
+						    <!-- Default Date-Picker card start -->
+						    <div class="card">
+						      <div class="card-header">
+						        <h5>Advanced Search</h5>
+						        <span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>
+						      </div>
+						      <div class="card-block">
+						<form id="foo" method="POST" class="form-inline">
+						        <div class="row">
+						             <div class="form-group mb-2 col-xl-3">	
+										<label class="" for="#datetimepicker1">Start Date</label>
+									    <input required type="datetime-local" class="form-control" id="datetimepicker1"  name="start"
+/>									
+								</div>
+								<div class="form-group mb-2 col-xl-3">
+									<label class="" for="#datetimepicker1">Stop Date</label>
+									<input required type="datetime-local" class="form-control" id="datetimepicker2"  name="stop"	
+/>
+								</div>
+								<input required type="hidden" class="form-control" id="datetimepicker1"  name="start_date"/>
+								<input required type="hidden" class="form-control" id="datetimepicker1"  name="start_time"/>
+								<input required type="hidden" class="form-control" id="datetimepicker1"  name="stop_date"/>
+								<input required type="hidden" class="form-control" id="datetimepicker1"  name="stop_time"/>
+						        <div class="form-group mb-2 col-xl-6">
+						            <label for="#from">From</label>
+						            <input class="form-control" type="text" name="from" id="from"  style="width:660px;" value="<%= form.from %>" />
+															
+							</div>
+							<div class="form-group mb-2 col-xl-6">
+							    <label for="#to">To</label>
+								
+					            	    <input class="form-control" type="text" name="to" id="to"  style="width:688px;" value="<%= form.to %>"/>
+								
+							</div>
+								<br>
+							<div class="form-group mb-2 col-xl-6">		    
+							    <label for="#impi">IMPI</label>
+								
+					            	    <input class="form-control" type="text" name="impi" id="impi" style="width:666px;" value="<%= form.impi %>"/>
+								
+							</div>    
+							<br>
+							
+						        
+							<div style="padding-left:91.5%;">
+								<button type="submit" class="btn btn-success">Submit</button>
+							</div>
+							
+						      </div>
+
+	
+					</form>
+						</div>
+					</div>
+
+                                        <div class="row">
+
+                                            <!-- sale revenue card start -->
+						
+                                            <div class="col-md-12">
+                                                <div class="card table-card">
+                                                    <div class="card-header">
+                                                        <h5>Customer  Overview</h5>
+                                                        <div class="card-header-right">
+                                                            <ul class="list-unstyled card-option">
+                                                                <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
+                                                                <li><i class="feather icon-maximize full-card"></i></li>
+                                                                <li><i class="feather icon-minus minimize-card"></i></li>
+                                                                <li><i class="feather icon-refresh-cw reload-card"></i></li>
+                                                                <li><i class="feather icon-trash close-card"></i></li>
+                                                                <li><i class="feather icon-chevron-left open-card-option"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-block">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover m-b-0">
+                                                                <thead>
+                                                                    <tr>
+                                                                        
+                                                                        <th style="text-align: center;">From</th>
+                                                                        <th style="text-align: center;">To</th>
+									<th style="text-align: center;">CallId</th>
+									<th style="text-align: center;">IMPI</th>
+									<th style="text-align: center;">FollowId</th>
+									<th style="text-align: center;">FollowType</th>
+									<th style="text-align: center;">Status</th>
+									<th style="text-align: center;">StartTime</th>
+									<th style="text-align: center;">StopTime</th>
+									<th style="text-align: center;">Duration</th>
+									<th style="text-align: center;">UEIP</th>
+									<th style="text-align: center;">UEPort</th>
+									<th style="text-align: center;">UEAgent</th>
+									<th style="text-align: center;">CreateTime</th>
+                                                                        <th style="text-align: center;">Download</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    
+									
+                                                                    	
+                                                                </tbody>
+                                                            </table>
+
+                                                        </div>
+							
+                                                    </div>
+							<div class="tabel-pagination" style="margin-left : 40%; margin-bottom : 5%;">
+								
+							</div>
+                                                </div>
+                                            </div>
+						
+						
+                                            <!-- sale revenue card end -->
+
+                                            <!-- Project statustic start -->
+                                            
+                                            <!-- Project statustic end -->
+
+                                            <!-- sale 2 card start -->
+                                        
+                                            
+                                            <!-- sale 2 card end -->
+
+                                            <!-- testimonial and top selling start -->
+                                            
+                                            <!-- testimonial and top selling end -->
+
+
+
+                                            <!-- lettest acivity and statustic card start -->
+
+                                            <!-- lettest acivity and statustic card end -->
+
+                                        </div>
+                                        <!-- [ page content ] end -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ style Customizer ] start -->
+                    <div id="styleSelector">
+                    </div>
+                    <!-- [ style Customizer ] end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Warning Section Starts -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 10]>
+    <div class="ie-warning">
+        <h1>Warning!!</h1>
+        <p>You are using an outdated version of Internet Explorer, please upgrade
+            <br/>to any of the following web browsers to access this website.
+        </p>
+        <div class="iew-container">
+            <ul class="iew-download">
+                <li>
+                    <a href="http://www.google.com/chrome/">
+                        <img src="../files/assets/images/browser/chrome.png" alt="Chrome">
+                        <div>Chrome</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.mozilla.org/en-US/firefox/new/">
+                        <img src="../files/assets/images/browser/firefox.png" alt="Firefox">
+                        <div>Firefox</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.opera.com">
+                        <img src="../files/assets/images/browser/opera.png" alt="Opera">
+                        <div>Opera</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.apple.com/safari/">
+                        <img src="../files/assets/images/browser/safari.png" alt="Safari">
+                        <div>Safari</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                        <img src="../files/assets/images/browser/ie.png" alt="">
+                        <div>IE (9 & above)</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <p>Sorry for the inconvenience!</p>
+    </div>
+<![endif]-->
+    <!-- Warning Section Ends -->
+    <!-- Required Jquery -->
+ 
+    <script type="text/javascript">
+	
+	function appendData(data,form){
+		console.log(data);
+		var _html="";
+			if(data.item!=null){
+				data.item.forEach(function(user){ 
+					_html+="<tr>"+"<td class='cell' data-toggle='tooltip' title='"+user.From+"'>"+user.From+"</td>"+"<td  class='cell' data-toggle='tooltip' title='"+user.To+"'>"+user.To+"</td>"+"<td class='cell' data-toggle='tooltip' title='"+user.CallId+"'>"+user.CallId+"</td>"+"<td>"+user.IMPI+"</td>"+"<td>"+user.FollowId+"</td>"+"<td>"+user.FollowTypeStr+" ("+user.FollowTypeId+")</td>"+"<td>"+user.StatusStr+" ("+user.StatusCode+")</td>"+"<td>"+user.StartTime+"</td>"+"<td>"+user.StopTime+"</td>"+"<td>"+(new Date(user.StopTime) - new Date(user.StartTime))/1000+"</td>"+"<td>"+user.UEIP+"</td>"+"<td>"+user.UEPort+"</td>"+"<td>"+user.UEAgent+"</td>"+"<td>"+user.CreateTime+"</td><td><a class='ttt' href='http://192.168.1."+user.DSId+"/Datastore/"+Math.floor(Number(user.utime)/86400)%86400+"/"+(user.FollowId % 512 )+"/"+ user.FollowId+".pcap' fileName='"+ user.FollowId+".pcap" +"' style='padding:inherit'><i class='fas fa-download'></i></a></td></tr>"		
+				});
+				console.log("CUR = "+data.current );	
+				$("tbody").html(_html);
+				
+				var pagination="";
+				if (data.pages > 0) {
+					pagination+='<span style="display: inline-flex; margin-left:15px"><ul class="pagination">'								
+							 if (data.current == 1) { 
+								pagination+='<li class="page-item disabled"><a class="page-link">First</a></li>'
+							} else {
+								pagination+='<li class="page-item"><a  class="page-link" href="/search?start_date='+form.start_date+' &stop_date='+form.stop_date+'&start_time='+form.start_time+'&stop_time='+form.stop_time+'&from='+form.from+'&to='+form.to+'&impi='+form.impi+'&per_page='+data.per_page+'&page=1">First</a></li>';
+								}
+					var i = (Number(data.current) > 5 ? Number(data.current) - 4 : 1)
+					if (i !== 1) {
+						pagination+='<li class="page-item disabled"><a class="page-link">...</a></li>'
+							} 
+					for (; i <= (Number(data.current) + 4) && i <= data.pages; i++) {
+						if (i == data.current) { 
+							pagination+='<li class="page-item active"><a class="page-link" href="/search?start_date='+form.start_date+' &stop_date='+form.stop_date+'&start_time='+form.start_time+'&stop_time='+form.stop_time+'&from='+form.from+'&to='+form.to+'&impi='+form.impi+'&per_page='+data.per_page+'&page='+i+'" class="page-link">'+i+'</a></li>'
+						}else {
+							pagination+='<li class="page-item "><a class="page-link" href="/search?start_date='+form.start_date+' &stop_date='+form.stop_date+'&start_time='+form.start_time+'&stop_time='+form.stop_time+'&from='+form.from+'&to='+form.to+'&impi='+form.impi+'&per_page='+data.per_page+'&page='+i+'">'+i+'</a></li>'
+						} 
+						if (i == Number(data.current) + 4 && i < data.pages) {
+						pagination+='<li class="page-item disabled"><a class="page-link">...</a></li>'
+						}
+					} 
+					if (data.current == data.pages) {
+						pagination+='<li class="page-item disabled"><a class="page-link">Last</a></li>'
+					} else {
+						pagination+='<li><a class="page-link" href="/search?start_date='+form.start_date+' &stop_date='+form.stop_date+'&start_time='+form.start_time+'&stop_time='+form.stop_time+'&from='+form.from+'&to='+form.to+'&impi='+form.impi+'&per_page='+data.per_page+'&page='+data.pages+'">Last</a></li>';
+					}
+					pagination+='</ul>'
+					pagination+=`<div style="margin-left:15px" class="dropdown">
+					  <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
+					    `+data.per_page+`
+					  </button>
+					  <div class="dropdown-menu">
+					<a class="dropdown-item" href="/search?start_date=`+form.start_date+` &stop_date=`+form.stop_date+`&start_time=`+form.start_time+`&stop_time=`+form.stop_time+`&from=`+form.from+`&to=`+form.to+`&impi=`+form.impi+`&page=1&per_page=10">10</a>
+					    <a class="dropdown-item" href="/search?start_date=`+form.start_date+` &stop_date=`+form.stop_date+`&start_time=`+form.start_time+`&stop_time=`+form.stop_time+`&from=`+form.from+`&to=`+form.to+`&impi=`+form.impi+`&page=1&per_page=50">50</a>
+						<a class="dropdown-item" href="/search?start_date=`+form.start_date+` &stop_date=`+form.stop_date+`&start_time=`+form.start_time+`&stop_time=`+form.stop_time+`&from=`+form.from+`&to=`+form.to+`&impi=`+form.impi+`&page=1&per_page=100">100</a>					    
+					  </div>
+					</div></span>`;
+				}
+				console.log(pagination);
+				$(".tabel-pagination").html(pagination); 
+						
+			}
+			else{
+				$("tbody").text("Item not found!");
+			}
+			    
+			
+		}
+	
+function am_pm_to_hours(time) {
+        console.log(time);
+        var hours = Number(time.match(/^(\d+)/)[1]);
+        var minutes = Number(time.match(/:(\d+)/)[1]);
+        var AMPM = time.match(/\s(.*)$/)[1];
+        if (AMPM == "pm" && hours < 12) hours = hours + 12;
+        if (AMPM == "am" && hours == 12) hours = hours - 12;
+        var sHours = hours.toString();
+        var sMinutes = minutes.toString();
+        if (hours < 10) sHours = "0" + sHours;
+        if (minutes < 10) sMinutes = "0" + sMinutes;
+        return (sHours +':'+sMinutes);
+    }
+
+function date(s){
+	var t = s.split("/");
+	return t[2]+"/"+t[0]+"/"+t[1];
+}
+
+
+$(document).ready(function() {	
+	$('[data-toggle="tooltip"]').tooltip(); 
+	$("#datetimepicker2").attr('value',new Date().toISOString().split("T")[0].replace("/","-")+"T00:00:00");
+	var d = new Date()
+	d.setDate(d.getDate()-30)
+	$("#datetimepicker1").attr('value',d.toISOString().split("T")[0].replace("/","-")+"T00:00:00");
+	var requests;	
+	
+	$("body").on("click", ".ttt", function(e) {
+        var btn = $(this);
+        $.ajax({
+            url: btn.attr('href'),
+            method: 'GET',
+            xhrFields: {
+                responseType: 'blob'
+            },
+            success: function (data) {
+                var a = document.createElement('a');
+                var url = window.URL.createObjectURL(data);
+                a.href = url;
+                a.download = btn.attr('fileName');
+                a.click();
+                window.URL.revokeObjectURL(url);
+            },
+            error: function (){
+                window.alert('XXXXXXXXXXXXXXXXXXXXXXX');
+            }
+        });  
+        return false;
+	});	
+
+	$("body").on("click", ".page-link", function() {
+				 
+                            $.ajax({
+				     type: "GET",
+				     url:$(this).attr('href'), 
+				     success:function(result){
+					var form = {start_time: $("input[name='start_time']").val(),start_date:$("input[name='start_date']").val(),stop_time:$("input[name='stop_time']").val(),stop_date:$("input[name='stop_date']").val(),impi:$("input[name='impi']").val(),from:$("input[name='from']").val(),to:$("input[name='to']").val()}
+					appendData(result,form);
+				}});
+				return false;
+	         });
+
+	$("body").on("click", ".dropdown-item", function() {
+                            $.ajax({
+				     type: "GET",
+				     url:$(this).attr('href'), 
+				     success:function(result){
+					var form = {start_time: $("input[name='start_time']").val(),start_date:$("input[name='start_date']").val(),stop_time:$("input[name='stop_time']").val(),stop_date:$("input[name='stop_date']").val(),impi:$("input[name='impi']").val(),from:$("input[name='from']").val(),to:$("input[name='to']").val()}
+					appendData(result,form);
+				}});
+				return false;
+	         });
+
+// Bind to the submit event of our form
+	$("#foo").submit(function(event){
+		
+	    // Prevent default posting of form - put here to work in case of errors
+	    event.preventDefault();
+		$("input[name='start_date']").val(date(new Date($("input[name='start']").val()).toLocaleDateString()));
+		$("input[name='start_time']").val(am_pm_to_hours(new Date($("input[name='start']").val()).toLocaleTimeString()));
+		$("input[name='stop_date']").val(date(new Date($("input[name='stop']").val()).toLocaleDateString()));
+		$("input[name='stop_time']").val(am_pm_to_hours(new Date($("input[name='stop']").val()).toLocaleTimeString()));
+		//alert($("input[name='stop_time']").val(),$("input[name='stop_date']").val(),$("input[name='start_time']").val(),$("input[name='start_date']").val())
+	    // Abort any pending request
+	    if (requests) {
+		requests.abort();
+	    }
+	    // setup some local variables
+	    var $form = $(this);
+
+	    // Let's select and cache all the fields
+	    var $inputs = $form.find("input, select, button, textarea");
+
+	    // Serialize the data in the form
+	    var serializedData = $form.serialize();
+
+	    // Let's disable the inputs for the duration of the Ajax request.
+	    // Note: we disable elements AFTER the form data has been serialized.
+	    // Disabled form elements will not be serialized.
+	    $inputs.prop("disabled", true);
+
+	    // Fire off the request to /form.php
+	    requests = $.ajax({
+		url: "/filter",
+		type: "post",
+		data: serializedData,
+		success: function(data) {
+		    console.log('success');
+			var form = {start_time:$("input[name='start_time']").val(),start_date:$("input[name='start_date']").val(),stop_time:$("input[name='stop_time']").val(),stop_date:$("input[name='stop_date']").val(),impi:$("input[name='impi']").val(),from:$("input[name='from']").val(),to:$("input[name='to']").val()}
+		    appendData(data,form);
+			$inputs.prop("disabled", false);
+
+	    	}
+	
+	    
+	    });
+	});
+	});
+	</script>
+	<script>
+		
+		
+
+	</script>
+		
+  
+	
+    <script type="text/javascript" src="/files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/files/bower_components/popper.js/js/popper.min.js"></script>
+    <script type="text/javascript" src="/files/bower_components/bootstrap/js/bootstrap.min.js"></script>
+    <!-- waves js -->
+    <script src="/files/assets/pages/waves/js/waves.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="/files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+    <!-- Float Chart js -->
+    
+    <!-- Chartlist charts -->
+    
+    <!-- amchart js -->
+    <script src="/files/assets/pages/widget/amchart/amcharts.js"></script>
+    <script src="/files/assets/pages/widget/amchart/serial.js"></script>
+    <script src="/files/assets/pages/widget/amchart/light.js"></script>
+    <!-- Custom js -->
+    <script src="/files/assets/js/pcoded.min.js"></script>
+    <script src="/files/assets/js/vertical/vertical-layout.min.js"></script>
+    <script type="text/javascript" src="/files/assets/pages/dashboard/custom-dashboard.min.js"></script>
+    <script type="text/javascript" src="/files/assets/js/script.min.js"></script>
+	
+	
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+</body>
+
+</html>
