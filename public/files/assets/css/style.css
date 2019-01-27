@@ -35,3 +35,7 @@ font-size: .725rem;
   background: #4099ff;
         border-radius: 6px;
 }
+
+body {
+  line-height: 0;
+}
