@@ -40,7 +40,22 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
     <link rel="stylesheet" type="text/css" href="/files/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="/files/assets/css/widget.css">
-
+    <script type="text/javascript" src="/files/bower_components/jquery/js/jquery.min.js"></script>
+    <script>
+                    $.ajax({
+                        url: "/getCurrentTime",
+                        method: "GET",
+                        success: function(data){
+                            console.log(data);
+                            $("#datetimepicker2").attr('value', new Date().toISOString().split("T")[0].replace("/", "-") + "T"+data["current_time"]);
+                                var d = new Date();
+                        d.setDate(d.getDate() - 30);
+                        $("#datetimepicker1").attr('value', d.toISOString().split("T")[0].replace("/", "-") + "T"+data["current_time"]);
+                        }
+                    });
+                    
+                    
+    </script>
 
 </head>
 
@@ -99,7 +114,6 @@
                                         data-dropdown-out="fadeOut">
                                         <li>
                                             <h6>Notifications</h6>
-
                                         </li>
 
                                     </ul>
@@ -263,55 +277,62 @@
                                                     <div class="card-block">
                                                         <form id="foo" method="POST" class="form-inline">
                                                             <div class="row">
-                                                                <div class="form-group mb-2 col-xl-3">
+                                                                <div class="form-group mb-2 col-xl-4">
                                                                     <label class="" for="#datetimepicker1">Start Date</label>
                                                                     <input required type="datetime-local" class="form-control"
                                                                         id="datetimepicker1" name="start" />
                                                                 </div>
-                                                                <div class="form-group mb-2 col-xl-3">
-                                                                    <label class="" for="#datetimepicker1">Stop Date</label>
-                                                                    <input required type="datetime-local" class="form-control"
-                                                                        id="datetimepicker2" name="stop" />
-                                                                </div>
-                                                                <input required type="hidden" class="form-control" id="datetimepicker1"
-                                                                    name="start_date" />
-                                                                <input required type="hidden" class="form-control" id="datetimepicker1"
-                                                                    name="start_time" />
-                                                                <input required type="hidden" class="form-control" id="datetimepicker1"
-                                                                    name="stop_date" />
-                                                                <input required type="hidden" class="form-control" id="datetimepicker1"
-                                                                    name="stop_time" />
-                                                                <div class="form-group mb-2 col-xl-6">
-                                                                    <label for="#from">From</label>
-                                                                    <input class="form-control" type="text" name="from"
-                                                                        id="from" style="width:660px;" value="<%= form.from %>" />
-
-                                                                </div>
-                                                                <div class="form-group mb-2 col-xl-6">
-                                                                    <label for="#to">To</label>
-
-                                                                    <input class="form-control" type="text" name="to"
-                                                                        id="to" style="width:688px;" value="<%= form.to %>" />
-
-                                                                </div>
-                                                                <br>
-                                                                <div class="form-group mb-2 col-xl-6">
-                                                                    <label for="#impi">IMPI</label>
-
-                                                                    <input class="form-control" type="text" name="impi"
-                                                                        id="impi" style="width:666px;" value="<%= form.impi %>" />
-
-                                                                </div>
-                                                                <br>
                                                                 
-                                                            </div>
-                                                            <div class="clearfix"></div>
-                                                            <div class="float-right" style="margin:auto;">
-                                                                    <button class="btn btn-success" style="margin-left:946px;" type="submit">Submit</button>
+                                                                <div class="form-group mb-2 col-xl-4">
+                                                                    <label for="#from">From</label>
+                                                                    <input class="form-control col-md-8" type="text" name="from"
+                                                                        id="from"  value="<%= form.from %>" />
+
+                                                                </div>
+                                                                <div class="form-group mb-2 col-xl-4">
+                                                                    <label for="#to">To</label>
+                                                                    <input class="form-control col-md-8" type="text" name="to"
+                                                                        id="to" value="<%= form.to %>" />
+
+                                                                </div>
+                                                                <div class="form-group mb-2 col-xl-4">
+                                                                        <label class="" for="#datetimepicker1">Stop Date</label>
+                                                                        <input required type="datetime-local" class="form-control"
+                                                                            id="datetimepicker2" name="stop" />
+                                                                    </div>
+                                                                    <input required type="hidden" class="form-control" id="datetimepicker1"
+                                                                        name="start_date" />
+                                                                    <input required type="hidden" class="form-control" id="datetimepicker1"
+                                                                        name="start_time" />
+                                                                    <input required type="hidden" class="form-control" id="datetimepicker1"
+                                                                        name="stop_date" />
+                                                                    <input required type="hidden" class="form-control" id="datetimepicker1"
+                                                                        name="stop_time" />
+                                                                <div class="form-group mb-2 col-xl-4">
+                                                                    <label for="#impi">IMPI</label>
+                                                                    <input class="form-control col-md-8" type="text" name="impi"
+                                                                        id="impi" style="margin-left:15px;" value="<%= form.impi %>" />
+                                                                </div>
+                                                                <div class="form-group mb-2 col-xl-2">
+                                                                        <label for="inputState">FollowType</label>
+                                                                        <select id="inputState" name="follow_type" class="form-control">
+                                                                            <option value="-1" selected>All</option>
+                                                                            <option value="46">Register</option>
+                                                                            <option value="1">Voice</option>
+                                                                            <option value="2">Video</option>
+                                                                            <option value="3">IM</option>
+                                                                            <option value="4">Chat</option>
+                                                                            <option value="47">Unregister</option>
+                                                                            <option value="64">Other</option>
+                                                                        </select>
+                                                                </div>
+                                                                <div class="form-group mb-2 col-xl-2">
+                                                                        <button class="btn btn-success"  type="submit">Submit</button>
+                                                                </div>
                                                             </div>
                                                             
-
-                                                        </form>
+                                                            
+                                                    </form>
                                                     </div>
                                                 </div>
                                                 
@@ -483,7 +504,7 @@
             <!-- Warning Section Ends -->
             <!-- Required Jquery -->
 
-            <script type="text/javascript" src="/files/bower_components/jquery/js/jquery.min.js"></script>
+            
     <script type="text/javascript" src="/files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/files/bower_components/popper.js/js/popper.min.js"></script>
     <script type="text/javascript" src="/files/bower_components/bootstrap/js/bootstrap.min.js"></script>
@@ -517,7 +538,8 @@
             <script src="/files/assets/js/vertical/vertical-layout.min.js"></script>
             <script src="/files/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
             <!-- Custom js -->
-   
+            <script src="/files/assets/js/moment.js"></script>
+            <script src="/files/assets/js/moment-timezone-with-data.js"></script>
             <script type="text/javascript">
                 $(".modal").each(function(l){$(this).on("show.bs.modal",function(l){var o=$(this).attr("data-easein");"shake"==o?$(".modal-dialog").velocity("callout."+o):"pulse"==o?$(".modal-dialog").velocity("callout."+o):"tada"==o?$(".modal-dialog").velocity("callout."+o):"flash"==o?$(".modal-dialog").velocity("callout."+o):"bounce"==o?$(".modal-dialog").velocity("callout."+o):"swing"==o?$(".modal-dialog").velocity("callout."+o):$(".modal-dialog").velocity("transition."+o)})});
 
@@ -526,7 +548,7 @@
                     var _html = "";
                     if (data.item != null) {
                         data.item.forEach(function (user) {
-                            _html += "<tr>" + "<td class='cell' data-toggle='tooltip' title='" + user.From + "'>" + user.From + "</td>" + "<td  class='cell' data-toggle='tooltip' title='" + user.To + "'>" + user.To + "</td>" + "<td class='cell' data-toggle='tooltip' title='" + user.CallId + "'>" + user.CallId + "</td>" + "<td>" + user.IMPI + "</td>" + "<td>" + user.FollowId + "</td>" + "<td>" + user.FollowTypeStr + " (" + user.FollowTypeId + ")</td>" + "<td>" + user.StatusStr + " (" + user.StatusCode + ")</td>" + "<td>" + user.StartTime + "</td>" + "<td>" + user.StopTime + "</td>" + "<td>" + (new Date(user.StopTime) - new Date(user.StartTime)) / 1000 + "</td>" + "<td>" + user.UEIP + "</td>" + "<td>" + user.UEPort + "</td>" + "<td>" + user.UEAgent + "</td>" + "<td>" + user.CreateTime + "</td>";
+                            _html += "<tr>" + "<td>" + user.From + "</td>" + "<td>" + user.To + "</td>" + "<td class='cell' data-toggle='tooltip' title='" + user.CallId + "'>" + user.CallId + "</td>" + "<td>" + user.IMPI + "</td>" + "<td>" + user.FollowId + "</td>" + "<td>" + user.FollowTypeStr + " (" + user.FollowTypeId + ")</td>" + "<td>" + user.StatusStr + " (" + user.StatusCode + ")</td>" + "<td>" + user.StartTime + "</td>" + "<td>" + user.StopTime + "</td>" + "<td>" + (new Date(user.StopTime) - new Date(user.StartTime)) / 1000 + "</td>" + "<td>" + user.UEIP + "</td>" + "<td>" + user.UEPort + "</td>" + "<td class='cell' data-toggle='tooltip' title='" + user.UEAgent +"'>" + user.UEAgent + "</td>" + "<td>" + user.CreateTime + "</td>";
                             if (Number(user.FollowTypeId)==1 && Number(user.StatusCode)==200)
                                 _html += "<td><a class='ttt' href='http://192.168.1." + user.DSId + "/Datastore/" + Math.floor(Number(user.utime) / 86400) % 86400 + "/" + (user.FollowId % 512) + "/" + user.FollowId + ".pcap' fileName='" + user.FollowId + ".pcap" + "' style='padding:inherit'><i class='fas fa-download'></i></a></td></tr>";
                             else
@@ -549,9 +571,9 @@
                             }
                             for (; i <= (Number(data.current) + 4) && i <= data.pages; i++) {
                                 if (i == data.current) {
-                                    pagination += '<li class="page-item active"><a class="page-link" href="/search?start_date=' + form.start_date + ' &stop_date=' + form.stop_date + '&start_time=' + form.start_time + '&stop_time=' + form.stop_time + '&from=' + form.from + '&to=' + form.to + '&impi=' + form.impi + '&per_page=' + data.per_page + '&page=' + i + '" class="page-link">' + i + '</a></li>'
+                                    pagination += '<li class="page-item active"><a class="page-link" href="/search?follow_type='+form.follow_type+'&start_date=' + form.start_date + ' &stop_date=' + form.stop_date + '&start_time=' + form.start_time + '&stop_time=' + form.stop_time + '&from=' + form.from + '&to=' + form.to + '&impi=' + form.impi + '&per_page=' + data.per_page + '&page=' + i + '" class="page-link">' + i + '</a></li>'
                                 } else {
-                                    pagination += '<li class="page-item "><a class="page-link" href="/search?start_date=' + form.start_date + ' &stop_date=' + form.stop_date + '&start_time=' + form.start_time + '&stop_time=' + form.stop_time + '&from=' + form.from + '&to=' + form.to + '&impi=' + form.impi + '&per_page=' + data.per_page + '&page=' + i + '">' + i + '</a></li>'
+                                    pagination += '<li class="page-item "><a class="page-link" href="/search?follow_type='+form.follow_type+'&start_date=' + form.start_date + ' &stop_date=' + form.stop_date + '&start_time=' + form.start_time + '&stop_time=' + form.stop_time + '&from=' + form.from + '&to=' + form.to + '&impi=' + form.impi + '&per_page=' + data.per_page + '&page=' + i + '">' + i + '</a></li>'
                                 }
                                 if (i == Number(data.current) + 4 && i < data.pages) {
                                     pagination += '<li class="page-item disabled"><a class="page-link">...</a></li>'
@@ -560,7 +582,7 @@
                             if (data.current == data.pages) {
                                 pagination += '<li class="page-item disabled"><a class="page-link">Last</a></li>'
                             } else {
-                                pagination += '<li><a class="page-link" href="/search?start_date=' + form.start_date + ' &stop_date=' + form.stop_date + '&start_time=' + form.start_time + '&stop_time=' + form.stop_time + '&from=' + form.from + '&to=' + form.to + '&impi=' + form.impi + '&per_page=' + data.per_page + '&page=' + data.pages + '">Last</a></li>';
+                                pagination += '<li><a class="page-link" href="/search?follow_type='+form.follow_type+'&start_date=' + form.start_date + ' &stop_date=' + form.stop_date + '&start_time=' + form.start_time + '&stop_time=' + form.stop_time + '&from=' + form.from + '&to=' + form.to + '&impi=' + form.impi + '&per_page=' + data.per_page + '&page=' + data.pages + '">Last</a></li>';
                             }
                             pagination += '</ul>'
                             pagination += `<div style="margin-left:15px" class="dropdown">
@@ -568,9 +590,9 @@
                             `+ data.per_page + `
                         </button>
                         <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/search?start_date=`+ form.start_date + ` &stop_date=` + form.stop_date + `&start_time=` + form.start_time + `&stop_time=` + form.stop_time + `&from=` + form.from + `&to=` + form.to + `&impi=` + form.impi + `&page=1&per_page=10">10</a>
-                            <a class="dropdown-item" href="/search?start_date=`+ form.start_date + ` &stop_date=` + form.stop_date + `&start_time=` + form.start_time + `&stop_time=` + form.stop_time + `&from=` + form.from + `&to=` + form.to + `&impi=` + form.impi + `&page=1&per_page=50">50</a>
-                            <a class="dropdown-item" href="/search?start_date=`+ form.start_date + ` &stop_date=` + form.stop_date + `&start_time=` + form.start_time + `&stop_time=` + form.stop_time + `&from=` + form.from + `&to=` + form.to + `&impi=` + form.impi + `&page=1&per_page=100">100</a>					    
+                        <a class="dropdown-item" href="/search?follow_type=`+form.follow_type+`&start_date=`+ form.start_date + ` &stop_date=` + form.stop_date + `&start_time=` + form.start_time + `&stop_time=` + form.stop_time + `&from=` + form.from + `&to=` + form.to + `&impi=` + form.impi + `&page=1&per_page=10">10</a>
+                            <a class="dropdown-item" href="/search?follow_type=`+form.follow_type+`&start_date=`+ form.start_date + ` &stop_date=` + form.stop_date + `&start_time=` + form.start_time + `&stop_time=` + form.stop_time + `&from=` + form.from + `&to=` + form.to + `&impi=` + form.impi + `&page=1&per_page=50">50</a>
+                            <a class="dropdown-item" href="/search?follow_type=`+form.follow_type+`&start_date=`+ form.start_date + ` &stop_date=` + form.stop_date + `&start_time=` + form.start_time + `&stop_time=` + form.stop_time + `&from=` + form.from + `&to=` + form.to + `&impi=` + form.impi + `&page=1&per_page=100">100</a>					    
                         </div>
                         </div></span>`;
                         }
@@ -606,11 +628,10 @@
 
 
                 $(document).ready(function () {
+                    
+                    var today = new Date();
                     $('[data-toggle="tooltip"]').tooltip();
-                    $("#datetimepicker2").attr('value', new Date().toISOString().split("T")[0].replace("/", "-") + "T00:00:00");
-                    var d = new Date()
-                    d.setDate(d.getDate() - 30)
-                    $("#datetimepicker1").attr('value', d.toISOString().split("T")[0].replace("/", "-") + "T00:00:00");
+                    
                     var requests;
 
                     $("body").on("click", ".ttt", function (e) {
@@ -656,7 +677,7 @@
                             type: "GET",
                             url: $(this).attr('href'),
                             success: function (result) {
-                                var form = { start_time: $("input[name='start_time']").val(), start_date: $("input[name='start_date']").val(), stop_time: $("input[name='stop_time']").val(), stop_date: $("input[name='stop_date']").val(), impi: $("input[name='impi']").val(), from: $("input[name='from']").val(), to: $("input[name='to']").val() }
+                                var form = {follow_type: $("select[name='follow_type']").val(), start_time: $("input[name='start_time']").val(), start_date: $("input[name='start_date']").val(), stop_time: $("input[name='stop_time']").val(), stop_date: $("input[name='stop_date']").val(), impi: $("input[name='impi']").val(), from: $("input[name='from']").val(), to: $("input[name='to']").val() }
                                 appendData(result, form);
                             }
                         });
@@ -698,7 +719,7 @@
                             data: serializedData,
                             success: function (data) {
                                 console.log('success');
-                                var form = { start_time: $("input[name='start_time']").val(), start_date: $("input[name='start_date']").val(), stop_time: $("input[name='stop_time']").val(), stop_date: $("input[name='stop_date']").val(), impi: $("input[name='impi']").val(), from: $("input[name='from']").val(), to: $("input[name='to']").val() }
+                                var form = {follow_type: $("select[name='follow_type']").val(), start_time: $("input[name='start_time']").val(), start_date: $("input[name='start_date']").val(), stop_time: $("input[name='stop_time']").val(), stop_date: $("input[name='stop_date']").val(), impi: $("input[name='impi']").val(), from: $("input[name='from']").val(), to: $("input[name='to']").val() }
                                 appendData(data, form);
                                 $inputs.prop("disabled", false);
 
