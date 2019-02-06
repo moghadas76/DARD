@@ -612,8 +612,8 @@
                     var hours = Number(time.match(/^(\d+)/)[1]);
                     var minutes = Number(time.match(/:(\d+)/)[1]);
                     var AMPM = time.match(/\s(.*)$/)[1];
-                    if (AMPM == "pm" && hours < 12) hours = hours + 12;
-                    if (AMPM == "am" && hours == 12) hours = hours - 12;
+                    if (AMPM == "PM" && hours < 12) hours = hours + 12;
+                    if (AMPM == "AM" && hours == 12) hours = hours - 12;
                     var sHours = hours.toString();
                     var sMinutes = minutes.toString();
                     if (hours < 10) sHours = "0" + sHours;
@@ -665,7 +665,7 @@
                             type: "GET",
                             url: $(this).attr('href'),
                             success: function (result) {
-                                var form = { start_time: $("input[name='start_time']").val(), start_date: $("input[name='start_date']").val(), stop_time: $("input[name='stop_time']").val(), stop_date: $("input[name='stop_date']").val(), impi: $("input[name='impi']").val(), from: $("input[name='from']").val(), to: $("input[name='to']").val() }
+                                var form = {follow_type: $("select[name='follow_type']").val(), start_time: $("input[name='start_time']").val(), start_date: $("input[name='start_date']").val(), stop_time: $("input[name='stop_time']").val(), stop_date: $("input[name='stop_date']").val(), impi: $("input[name='impi']").val(), from: $("input[name='from']").val(), to: $("input[name='to']").val() }
                                 appendData(result, form);
                             }
                         });
@@ -679,6 +679,9 @@
                             success: function (result) {
                                 var form = {follow_type: $("select[name='follow_type']").val(), start_time: $("input[name='start_time']").val(), start_date: $("input[name='start_date']").val(), stop_time: $("input[name='stop_time']").val(), stop_date: $("input[name='stop_date']").val(), impi: $("input[name='impi']").val(), from: $("input[name='from']").val(), to: $("input[name='to']").val() }
                                 appendData(result, form);
+                            },
+                            fail: function(){
+                                alert("aaaa");
                             }
                         });
                         return false;
@@ -723,6 +726,9 @@
                                 appendData(data, form);
                                 $inputs.prop("disabled", false);
 
+                            },
+                            fail: function(data){
+                                alert(data);
                             }
 
 

@@ -91,9 +91,16 @@ router.post('/filter', function(req, res, next) {
 	  });
 	  connection.connect();
 	  connection.query(query, function (error, results, fields) {
-	    if (error) throw error;
+	    if (error){
+			res.statusCode = 500;
+			res.send({message: "Error"})
+		}
 		var records;
 		connection.query(aggregate_query,function(error,rows,fields){
+			if(error){
+				res.statusCode = 500;
+				res.send({message: "Error"})
+			}
 			console.log(rows);
 			records = rows[0]['count(*)'];
 			console.log(records);				
